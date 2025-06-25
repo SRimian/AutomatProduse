@@ -1,12 +1,24 @@
 # AutomatProduse
 
+Arduino IDE software:
 1. Se instaleaza Arduino IDE
 2. Se introduce codul in sketch
-3. Alegem placa corecta si portul serial corect
+3. Selecteaza placa ta din Tools > Board
+4. Selecteaza portul corect din Tools > Port
 4. Apasam verify si apoi load
+
+Verificam functionalitatea Automatului:
+1. LED-ul trebuie sa se aprinda 
+2. Introdu o moneda → soldul crește.
+3. Apasa butonul 1 → se verifica dacă ai sold ≥ 2.5 RON.
+4. Apasa butonul 2 → se verifica dacă ai sold ≥ 3.0 RON.
+5. Ecranul LCD actualizeaza soldul și starea curenta.
+6. Servomotoarele se misca pentru a "livra" produsul.
 
 
 Codul proiectului:
+
+```
 #include <LiquidCrystal_I2C.h>
 #include <Wire.h>
 #include <Servo.h>
@@ -130,3 +142,4 @@ void loop() {
   verificaApasareButon();
   detectareMoneda();
 }
+```
